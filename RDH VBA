@@ -1,0 +1,135 @@
+Sub RDH()
+
+Dim WP As Workbook 'Pasta de Trabalho Atual'
+Dim WS As Workbook 'Pasta Terceira'
+Dim WPSheet As Worksheet 'Planilha atual'
+
+'Definição das Planilhas Trabalhadas'
+
+Set WP = ThisWorkbook
+Set WPSheet = WP.Sheets("Acompanhamento UHEs")
+pasta = Application.ThisWorkbook.Path & "\RDH.xlsx"
+Set WS = Workbooks.Open(pasta)
+Set WSSheet = WS.Sheets("Hidráulico-Hidrológica")
+WPSheet.Activate
+
+'Envio dos Dados para a Planilha Dash'
+ActiveSheet.Range("D1").End(xlDown).Select
+ActiveCell.Offset(1, 0).Select
+L = ActiveCell.Row
+
+'Pimental'
+WPSheet.Cells(L, 4) = WSSheet.Cells(170, 23) 'Afluente'
+WPSheet.Cells(L, 5) = WSSheet.Cells(170, 21) 'Defluente'
+WPSheet.Cells(L, 6) = WSSheet.Cells(170, 15) 'Nível'
+WPSheet.Cells(L, 7) = WSSheet.Cells(170, 16) / 100 'Reservatório'
+WPSheet.Cells(L, 8) = WSSheet.Cells(170, 19) 'Vertimento'
+
+'Belo Monte'
+WPSheet.Cells(L, 9) = WSSheet.Cells(171, 27) 'Afluente' 'Único com coluna diferente'
+WPSheet.Cells(L, 10) = WSSheet.Cells(171, 21) 'Defluente'
+WPSheet.Cells(L, 11) = WSSheet.Cells(171, 15) 'Nível'
+WPSheet.Cells(L, 12) = WSSheet.Cells(171, 16) / 100 'Reservatório'
+WPSheet.Cells(L, 13) = WSSheet.Cells(171, 19) 'Vertimento'
+
+'Tucuruí'
+WPSheet.Cells(L, 14) = WSSheet.Cells(154, 23) 'Afluente'
+WPSheet.Cells(L, 15) = WSSheet.Cells(154, 21) 'Defluente'
+WPSheet.Cells(L, 16) = WSSheet.Cells(154, 15) 'Nível'
+WPSheet.Cells(L, 17) = WSSheet.Cells(154, 16) / 100 'Reservatório'
+WPSheet.Cells(L, 18) = WSSheet.Cells(154, 19) 'Vertimento'
+
+'Serra da Mesa'
+WPSheet.Cells(L, 19) = WSSheet.Cells(148, 23) 'Afluente'
+WPSheet.Cells(L, 20) = WSSheet.Cells(148, 21) 'Defluente'
+WPSheet.Cells(L, 21) = WSSheet.Cells(148, 15) 'Nível'
+WPSheet.Cells(L, 22) = WSSheet.Cells(148, 16) / 100 'Reservatório'
+WPSheet.Cells(L, 23) = WSSheet.Cells(148, 19) 'Vertimento'
+
+'Furnas'
+WPSheet.Cells(L, 24) = WSSheet.Cells(11, 23) 'Afluente'
+WPSheet.Cells(L, 25) = WSSheet.Cells(11, 21) 'Defluente'
+WPSheet.Cells(L, 26) = WSSheet.Cells(11, 15) 'Nível'
+WPSheet.Cells(L, 27) = WSSheet.Cells(11, 16) / 100 'Reservatório'
+WPSheet.Cells(L, 28) = WSSheet.Cells(11, 19) 'Vertimento'
+
+'M. Moraes'
+WPSheet.Cells(L, 29) = WSSheet.Cells(12, 23) 'Afluente'
+WPSheet.Cells(L, 30) = WSSheet.Cells(12, 21) 'Defluente'
+WPSheet.Cells(L, 31) = WSSheet.Cells(12, 15) 'Nível'
+WPSheet.Cells(L, 32) = WSSheet.Cells(12, 16) / 100 'Reservatório'
+WPSheet.Cells(L, 33) = WSSheet.Cells(12, 19) 'Vertimento'
+
+'Emborcação'
+WPSheet.Cells(L, 34) = WSSheet.Cells(25, 23) 'Afluente'
+WPSheet.Cells(L, 35) = WSSheet.Cells(25, 21) 'Defluente'
+WPSheet.Cells(L, 36) = WSSheet.Cells(25, 15) 'Nível'
+WPSheet.Cells(L, 37) = WSSheet.Cells(25, 16) / 100 'Reservatório'
+WPSheet.Cells(L, 38) = WSSheet.Cells(25, 19) 'Vertimento'
+
+'Itumbiara'
+WPSheet.Cells(L, 39) = WSSheet.Cells(33, 23) 'Afluente'
+WPSheet.Cells(L, 40) = WSSheet.Cells(33, 21) 'Defluente'
+WPSheet.Cells(L, 41) = WSSheet.Cells(33, 15) 'Nível'
+WPSheet.Cells(L, 42) = WSSheet.Cells(33, 16) / 100 'Reservatório'
+WPSheet.Cells(L, 43) = WSSheet.Cells(33, 19) 'Vertimento'
+
+'Três Marias'
+WPSheet.Cells(L, 44) = WSSheet.Cells(138, 23) 'Afluente'
+WPSheet.Cells(L, 45) = WSSheet.Cells(138, 21) 'Defluente'
+WPSheet.Cells(L, 46) = WSSheet.Cells(138, 15) 'Nível'
+WPSheet.Cells(L, 47) = WSSheet.Cells(138, 16) / 100 'Reservatório'
+WPSheet.Cells(L, 48) = WSSheet.Cells(138, 19) 'Vertimento'
+
+'Sobradinho'
+WPSheet.Cells(L, 49) = WSSheet.Cells(141, 23) 'Afluente'
+WPSheet.Cells(L, 50) = WSSheet.Cells(141, 21) 'Defluente'
+WPSheet.Cells(L, 51) = WSSheet.Cells(141, 15) 'Nível'
+WPSheet.Cells(L, 52) = WSSheet.Cells(141, 16) / 100 'Reservatório'
+WPSheet.Cells(L, 53) = WSSheet.Cells(141, 19) 'Vertimento'
+
+'Ilha Solteira'
+WPSheet.Cells(L, 54) = WSSheet.Cells(42, 23) 'Afluente'
+WPSheet.Cells(L, 55) = WSSheet.Cells(42, 21) 'Defluente'
+WPSheet.Cells(L, 56) = WSSheet.Cells(42, 15) 'Nível'
+WPSheet.Cells(L, 57) = WSSheet.Cells(42, 16) / 100 'Reservatório'
+WPSheet.Cells(L, 58) = WSSheet.Cells(42, 19) 'Vertimento'
+
+'P. Primavera'
+WPSheet.Cells(L, 59) = WSSheet.Cells(58, 23) 'Afluente'
+WPSheet.Cells(L, 60) = WSSheet.Cells(58, 21) 'Defluente'
+WPSheet.Cells(L, 61) = WSSheet.Cells(58, 15) 'Nível'
+WPSheet.Cells(L, 62) = WSSheet.Cells(58, 16) / 100 'Reservatório'
+WPSheet.Cells(L, 63) = WSSheet.Cells(58, 19) 'Vertimento'
+
+
+'Itaipu'
+WPSheet.Cells(L, 64) = WSSheet.Cells(70, 23) 'Afluente'
+WPSheet.Cells(L, 65) = WSSheet.Cells(70, 21) 'Defluente'
+WPSheet.Cells(L, 66) = WSSheet.Cells(70, 15) 'Nível'
+WPSheet.Cells(L, 67) = WSSheet.Cells(70, 16) / 100 'Reservatório'
+WPSheet.Cells(L, 68) = WSSheet.Cells(70, 19) 'Vertimento'
+
+
+'Jirau'
+WPSheet.Cells(L, 69) = WSSheet.Cells(159, 23) 'Afluente'
+WPSheet.Cells(L, 70) = WSSheet.Cells(159, 21) 'Defluente'
+WPSheet.Cells(L, 71) = WSSheet.Cells(159, 15) 'Nível'
+WPSheet.Cells(L, 72) = WSSheet.Cells(159, 16) / 100 'Reservatório'
+WPSheet.Cells(L, 73) = WSSheet.Cells(159, 19) 'Vertimento'
+
+
+'Sto. Antonio'
+WPSheet.Cells(L, 74) = WSSheet.Cells(160, 23) 'Afluente'
+WPSheet.Cells(L, 75) = WSSheet.Cells(160, 21) 'Defluente'
+WPSheet.Cells(L, 76) = WSSheet.Cells(160, 15) 'Nível'
+WPSheet.Cells(L, 77) = WSSheet.Cells(160, 16) / 100 'Reservatório'
+WPSheet.Cells(L, 78) = WSSheet.Cells(160, 19) 'Vertimento'
+
+WP.Save
+WS.Close
+
+
+End Sub
+'
+
